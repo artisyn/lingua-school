@@ -3,30 +3,25 @@ import { RootState } from '../store';
 import { useSelector, useDispatch } from 'react-redux';
 import { pageChange } from '../features/currentPage/currentPageSlice';
 import styled from 'styled-components';
-import Nav from '../components/navbar/Nav';
 import Footer from '../components/Footer';
-import About from '../components/About';
 import LogoSection from '../components/LogoSection';
-import SiteOptions from '../components/SiteOptions';
+import Nav from '../components/navbar/Nav';
 
-interface AboutProps {}
 const Container = styled.div``;
 
-const Home: FC<AboutProps> = () => {
+const AnimalIdiomsPage: FC = () => {
 	const page = useSelector((state: RootState) => state.page.value);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(pageChange('ABOUT'));
+		dispatch(pageChange('ANIMAL IDIOMS'));
 	}, []);
 	return (
 		<Container>
 			<Nav />
 			<LogoSection />
-			<About />
-			<SiteOptions />
 			<Footer />
 		</Container>
 	);
 };
 
-export default Home;
+export default AnimalIdiomsPage;

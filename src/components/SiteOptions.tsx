@@ -1,27 +1,128 @@
 import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import SiteOptionEl from './SiteOptionEl';
+import monitor1 from '../monitor1.png';
+import monitor2 from '../monitor2.png';
+import { MdArrowRightAlt } from 'react-icons/md';
 
 const Container = styled.div`
-	padding: 1rem;
+	padding: 2rem 1rem;
 	display: flex;
 	gap: 3rem;
 	align-items: center;
 	justify-content: center;
+	min-height: 30vh;
 `;
 
-const Frame = styled.div`
-	border-radius: 30% 70% 28% 72% / 60% 34% 66% 40%;
-	background-color: #fee4bf;
-	height: 8rem;
-	width: 8rem;
+const ClickableBox = styled.div`
+	position: relative;
+	z-index: 2;
+	width: 80%;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+const Logo = styled.img`
+	z-index: 1;
+	position: absolute;
+	max-height: 70%;
+	object-fit: contain;
+	object-position: center;
+`;
+
+const BoxContainer = styled.div`
+	display: flex;
+`;
+
+const TextContainer = styled.div`
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.3rem;
+	font-weight: bold;
+	letter-spacing: 0.08rem;
+`;
+const BoxButton = styled.button`
+	color: white;
+	position: relative;
+	outline: none;
+	border: none;
+	border-radius: 1rem;
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	width: 70%;
+	height: 40%;
+	background-color: #efa34b;
+	text-align: left;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	transition: all ease 0.4s;
+	&:hover {
+		background-color: #efa24bc4;
+	}
+`;
+const Symbol = styled.span`
+	position: absolute;
+	font-size: 3rem;
+	bottom: 0.5rem;
+	right: 0;
+	height: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 const SiteOptions: FC = () => {
+	const navigate = useNavigate();
+	const handleClickIdioms = (): void => {
+		navigate('/Animal-idioms');
+	};
+	const handleClickPlacement = (): void => {
+		navigate('/Placement-test');
+	};
 	return (
 		<Container>
-			<Frame></Frame>
-			<Frame></Frame>
-			<Frame></Frame>
+			<BoxContainer>
+				<SiteOptionEl>
+					<ClickableBox>
+						<Logo src={monitor1} />
+					</ClickableBox>
+				</SiteOptionEl>
+				<TextContainer>
+					Test Your English Level.
+					<BoxButton onClick={handleClickPlacement}>
+						Placement Test
+						<Symbol>
+							<MdArrowRightAlt />
+						</Symbol>
+					</BoxButton>
+				</TextContainer>
+			</BoxContainer>
+			<BoxContainer>
+				<SiteOptionEl>
+					<ClickableBox>
+						<Logo src={monitor2} />
+					</ClickableBox>
+				</SiteOptionEl>
+				<TextContainer>
+					Have Fun With Idioms Quizz.
+					<BoxButton onClick={handleClickIdioms}>
+						Animal
+						<br /> Idioms
+						<Symbol>
+							<MdArrowRightAlt />
+						</Symbol>
+					</BoxButton>
+				</TextContainer>
+			</BoxContainer>
 		</Container>
 	);
 };

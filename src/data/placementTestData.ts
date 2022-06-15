@@ -1,4 +1,5 @@
 interface placementQuestion {
+	id: number;
 	question: string;
 	a: string;
 	b: string;
@@ -10,6 +11,7 @@ interface placementQuestion {
 export const questions: { [A: string]: placementQuestion[] } = {
 	A: [
 		{
+			id: 1,
 			question: '_____  name is George.',
 			a: 'Me',
 			b: 'I',
@@ -17,6 +19,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 2,
 			question: 'They _____  from Italy',
 			a: 'is',
 			b: 'are',
@@ -24,6 +27,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 3,
 			question: '_____  are you from?',
 			a: 'What',
 			b: 'Who',
@@ -31,6 +35,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 4,
 			question: 'What do you do? I’m _____  student.',
 			a: 'the',
 			b: 'a',
@@ -38,6 +43,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 5,
 			question: 'Nurlan _____  at seven o’clock.',
 			a: 'goes up',
 			b: 'gets',
@@ -45,6 +51,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 6,
 			question: '_____  you like this computer game?',
 			a: 'Are',
 			b: 'Have',
@@ -52,6 +59,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 7,
 			question: 'We _____ work in an office.',
 			a: "don't",
 			b: "hasn't",
@@ -59,6 +67,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 8,
 			question: 'Wednesday, Thursday, Friday, _____ ',
 			a: 'Saturday',
 			b: 'Tuesday',
@@ -66,6 +75,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 9,
 			question: '_____  he meet with friends?',
 			a: 'Where',
 			b: 'Does',
@@ -73,6 +83,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 10,
 			question: 'Have you _____  a laptop?',
 			a: 'any',
 			b: 'have',
@@ -80,6 +91,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 11,
 			question: 'We don’t have _____ coffee.',
 			a: 'a',
 			b: 'any',
@@ -87,6 +99,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 12,
 			question: '_____  some money here.',
 			a: "There're",
 			b: 'There',
@@ -94,6 +107,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 13,
 			question: 'We _____  got a pet.',
 			a: "haven't",
 			b: "hasn't",
@@ -101,6 +115,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 14,
 			question: 'This car is very _____ .',
 			a: 'expensive',
 			b: 'rich',
@@ -108,6 +123,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 15,
 			question: 'Have you got a printer? Yes, I _____ .',
 			a: 'am',
 			b: 'have',
@@ -115,6 +131,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 16,
 			question: 'It is a busy, _____  city.',
 			a: 'traffic',
 			b: 'quite',
@@ -122,6 +139,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 17,
 			question: 'They _____  at home last Friday.',
 			a: 'was',
 			b: 'are',
@@ -129,6 +147,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 18,
 			question: 'I _____  there for a long time.',
 			a: 'lived',
 			b: 'living',
@@ -136,6 +155,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 19,
 			question: 'He doesn’t _____  glasses.',
 			a: 'put',
 			b: 'wear',
@@ -143,6 +163,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 20,
 			question: 'The restaurant was _____  busy.',
 			a: 'very',
 			b: 'a lot',
@@ -150,6 +171,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 21,
 			question: 'Do you like the black _____ ?',
 			a: 'it',
 			b: 'that',
@@ -157,6 +179,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 22,
 			question: 'He _____  to France on holiday.',
 			a: 'go',
 			b: 'goed',
@@ -164,6 +187,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 23,
 			question: 'Yesterday was the _____  of April.',
 			a: 'fifth',
 			b: 'five',
@@ -171,6 +195,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 24,
 			question: 'She’s got _____  hair.',
 			a: 'blond, short',
 			b: 'blond and short',
@@ -178,6 +203,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 25,
 			question: 'I _____ watch films at the weekend.',
 			a: 'usually',
 			b: 'as usually',
@@ -185,6 +211,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 26,
 			question: 'I _____  in an armchair at the moment.',
 			a: 'sitting',
 			b: "'m sitting",
@@ -192,6 +219,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 27,
 			question: 'My sister is older _____  me.',
 			a: 'then',
 			b: 'that',
@@ -199,6 +227,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 28,
 			question: 'Their house is _____  biggest in the neighbourhood.',
 			a: '-',
 			b: 'a',
@@ -206,6 +235,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 29,
 			question: 'It’s the _____  difficult question in the test.',
 			a: 'more',
 			b: 'much',
@@ -213,6 +243,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 30,
 			question: 'The phone’s ringing:  _____  answer it.',
 			a: "I'll",
 			b: 'I',
@@ -220,6 +251,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 31,
 			question: 'Do you _____  classical or rock music?',
 			a: 'rather',
 			b: 'prefer',
@@ -227,6 +259,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 32,
 			question: 'He has _____  all the cake.',
 			a: 'ate',
 			b: 'eaten',
@@ -234,6 +267,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 33,
 			question: 'The _____  have seen this cartoon before.',
 			a: 'childs',
 			b: 'child',
@@ -241,6 +275,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 34,
 			question: 'I’ve never met a celebrity _____ .',
 			a: 'before',
 			b: 'ago',
@@ -248,6 +283,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 35,
 			question: '_____  is the best exercise.',
 			a: 'Swim',
 			b: 'To swim',
@@ -255,6 +291,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 36,
 			question: 'Have you _____  been on a winter sports holiday?',
 			a: 'always',
 			b: 'ever',
@@ -262,6 +299,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 37,
 			question: 'I can’t _____  a foreign language.',
 			a: 'speaking',
 			b: 'speak',
@@ -269,6 +307,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 38,
 			question: 'They _____  pay for the tickets.',
 			a: "havent't to",
 			b: "don't have",
@@ -276,6 +315,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 39,
 			question: '_____  old is their son?',
 			a: 'What',
 			b: 'When',
@@ -283,6 +323,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 40,
 			question: 'Are you _____  for one or two weeks?',
 			a: 'staying',
 			b: 'stayed',
@@ -290,6 +331,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 41,
 			question: 'Alex _____  to buy a new car.',
 			a: 'will',
 			b: 'going',
@@ -297,6 +339,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 42,
 			question: 'I don’t _____  getting up early.',
 			a: 'not like',
 			b: 'want',
@@ -304,6 +347,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 43,
 			question: 'We _____  like to visit your city.',
 			a: 'would',
 			b: 'will',
@@ -311,6 +355,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 44,
 			question: 'They _____  ever watch the news on TV.',
 			a: 'hard',
 			b: 'harder',
@@ -318,6 +363,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 45,
 			question: 'They won’t come, _____  they?',
 			a: "won't",
 			b: 'come',
@@ -325,6 +371,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 46,
 			question: 'He _____  know how to spell it.',
 			a: "doesn't",
 			b: "hasn't",
@@ -332,6 +379,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 47,
 			question: 'Carla _____  to music all morning.',
 			a: 'listening',
 			b: 'heard',
@@ -339,6 +387,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 48,
 			question: 'They _____  come to the cinema with us.',
 			a: "doesn't",
 			b: 'not',
@@ -346,6 +395,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 49,
 			question: 'I love detective stories. _____  do I.',
 			a: 'Either',
 			b: 'So',
@@ -353,6 +403,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 50,
 			question: 'We  _____ at the cafe at 7 pm.',
 			a: 'meeting',
 			b: "'re meet",
@@ -362,6 +413,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 	],
 	B: [
 		{
+			id: 1,
 			question: '_____  name is George.',
 			a: 'Me',
 			b: 'I',
@@ -369,6 +421,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 2,
 			question: 'They _____  from Italy',
 			a: 'is',
 			b: 'are',
@@ -376,6 +429,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 3,
 			question: '_____  are you from?',
 			a: 'What',
 			b: 'Who',
@@ -383,6 +437,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 4,
 			question: 'What do you do? I’m _____  student.',
 			a: 'the',
 			b: 'a',
@@ -390,6 +445,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 5,
 			question: 'Nurlan _____  at seven o’clock.',
 			a: 'goes up',
 			b: 'gets',
@@ -397,6 +453,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 6,
 			question: '_____  you like this computer game?',
 			a: 'Are',
 			b: 'Have',
@@ -404,6 +461,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 7,
 			question: 'We _____ work in an office.',
 			a: "don't",
 			b: "hasn't",
@@ -411,6 +469,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 8,
 			question: 'Wednesday, Thursday, Friday, _____ ',
 			a: 'Saturday',
 			b: 'Tuesday',
@@ -418,6 +477,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 9,
 			question: '_____  he meet with friends?',
 			a: 'Where',
 			b: 'Does',
@@ -425,6 +485,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 10,
 			question: 'Have you _____  a laptop?',
 			a: 'any',
 			b: 'have',
@@ -432,6 +493,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 11,
 			question: 'We don’t have _____ coffee.',
 			a: 'a',
 			b: 'any',
@@ -439,6 +501,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 12,
 			question: '_____  some money here.',
 			a: "There're",
 			b: 'There',
@@ -446,6 +509,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 13,
 			question: 'We _____  got a pet.',
 			a: "haven't",
 			b: "hasn't",
@@ -453,6 +517,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 14,
 			question: 'This car is very _____ .',
 			a: 'expensive',
 			b: 'rich',
@@ -460,6 +525,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 15,
 			question: 'Have you got a printer? Yes, I _____ .',
 			a: 'am',
 			b: 'have',
@@ -467,6 +533,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 16,
 			question: 'It is a busy, _____  city.',
 			a: 'traffic',
 			b: 'quite',
@@ -474,6 +541,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 17,
 			question: 'They _____  at home last Friday.',
 			a: 'was',
 			b: 'are',
@@ -481,6 +549,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 18,
 			question: 'I _____  there for a long time.',
 			a: 'lived',
 			b: 'living',
@@ -488,6 +557,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 19,
 			question: 'He doesn’t _____  glasses.',
 			a: 'put',
 			b: 'wear',
@@ -495,6 +565,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 20,
 			question: 'The restaurant was _____  busy.',
 			a: 'very',
 			b: 'a lot',
@@ -502,6 +573,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 21,
 			question: 'Do you like the black _____ ?',
 			a: 'it',
 			b: 'that',
@@ -509,6 +581,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 22,
 			question: 'He _____  to France on holiday.',
 			a: 'go',
 			b: 'goed',
@@ -516,6 +589,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 23,
 			question: 'Yesterday was the _____  of April.',
 			a: 'fifth',
 			b: 'five',
@@ -523,6 +597,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 24,
 			question: 'She’s got _____  hair.',
 			a: 'blond, short',
 			b: 'blond and short',
@@ -530,6 +605,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 25,
 			question: 'I _____ watch films at the weekend.',
 			a: 'usually',
 			b: 'as usually',
@@ -537,6 +613,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 26,
 			question: 'I _____  in an armchair at the moment.',
 			a: 'sitting',
 			b: "'m sitting",
@@ -544,6 +621,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 27,
 			question: 'My sister is older _____  me.',
 			a: 'then',
 			b: 'that',
@@ -551,6 +629,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 28,
 			question: 'Their house is _____  biggest in the neighbourhood.',
 			a: '-',
 			b: 'a',
@@ -558,6 +637,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 29,
 			question: 'It’s the _____  difficult question in the test.',
 			a: 'more',
 			b: 'much',
@@ -565,6 +645,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 30,
 			question: 'The phone’s ringing:  _____  answer it.',
 			a: "I'll",
 			b: 'I',
@@ -572,6 +653,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 31,
 			question: 'Do you _____  classical or rock music?',
 			a: 'rather',
 			b: 'prefer',
@@ -579,6 +661,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 32,
 			question: 'He has _____  all the cake.',
 			a: 'ate',
 			b: 'eaten',
@@ -586,6 +669,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 33,
 			question: 'The _____  have seen this cartoon before.',
 			a: 'childs',
 			b: 'child',
@@ -593,6 +677,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 34,
 			question: 'I’ve never met a celebrity _____ .',
 			a: 'before',
 			b: 'ago',
@@ -600,6 +685,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 35,
 			question: '_____  is the best exercise.',
 			a: 'Swim',
 			b: 'To swim',
@@ -607,6 +693,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 36,
 			question: 'Have you _____  been on a winter sports holiday?',
 			a: 'always',
 			b: 'ever',
@@ -614,6 +701,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 37,
 			question: 'I can’t _____  a foreign language.',
 			a: 'speaking',
 			b: 'speak',
@@ -621,6 +709,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 38,
 			question: 'They _____  pay for the tickets.',
 			a: "havent't to",
 			b: "don't have",
@@ -628,6 +717,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 39,
 			question: '_____  old is their son?',
 			a: 'What',
 			b: 'When',
@@ -635,6 +725,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 40,
 			question: 'Are you _____  for one or two weeks?',
 			a: 'staying',
 			b: 'stayed',
@@ -642,6 +733,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 41,
 			question: 'Alex _____  to buy a new car.',
 			a: 'will',
 			b: 'going',
@@ -649,6 +741,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 42,
 			question: 'I don’t _____  getting up early.',
 			a: 'not like',
 			b: 'want',
@@ -656,6 +749,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 43,
 			question: 'We _____  like to visit your city.',
 			a: 'would',
 			b: 'will',
@@ -663,6 +757,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 44,
 			question: 'They _____  ever watch the news on TV.',
 			a: 'hard',
 			b: 'harder',
@@ -670,6 +765,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 45,
 			question: 'They won’t come, _____  they?',
 			a: "won't",
 			b: 'come',
@@ -677,6 +773,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 46,
 			question: 'He _____  know how to spell it.',
 			a: "doesn't",
 			b: "hasn't",
@@ -684,6 +781,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 47,
 			question: 'Carla _____  to music all morning.',
 			a: 'listening',
 			b: 'heard',
@@ -691,6 +789,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 48,
 			question: 'They _____  come to the cinema with us.',
 			a: "doesn't",
 			b: 'not',
@@ -698,6 +797,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 49,
 			question: 'I love detective stories. _____  do I.',
 			a: 'Either',
 			b: 'So',
@@ -705,6 +805,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 50,
 			question: 'We  _____ at the cafe at 7 pm.',
 			a: 'meeting',
 			b: "'re meet",
@@ -712,6 +813,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 51,
 			question: 'They are going _____  in Lithuania next month.',
 			a: 'to be',
 			b: 'will be',
@@ -720,6 +822,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 52,
 			question: 'This is the university _____ I studied.',
 			a: 'when',
 			b: 'which',
@@ -728,6 +831,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 53,
 			question: 'Have you ever _____  in a jazz band?',
 			a: 'seen',
 			b: 'played',
@@ -736,6 +840,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 54,
 			question: 'I’m _____  when I’m with my friends.',
 			a: 'happyer',
 			b: 'happier than',
@@ -744,6 +849,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 55,
 			question: 'The result is _____  than I thought.',
 			a: 'bad',
 			b: 'badder',
@@ -752,6 +858,7 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 56,
 			question: 'Could you tell me the way _____ the police station ?',
 			a: 'to',
 			b: 'for',
@@ -760,6 +867,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 57,
+
 			question: 'Do you know what _____ ?',
 			a: 'time is it',
 			b: 'time is',
@@ -768,6 +877,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 58,
+
 			question: 'Were you _____  to arrive on time?',
 			a: 'could',
 			b: 'can',
@@ -776,6 +887,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 59,
+
 			question: 'Everybody _____  wear a seat belt in the car.',
 			a: 'must',
 			b: 'must to',
@@ -784,6 +897,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 60,
+
 			question: 'Tom has lived in this town _____  three years.',
 			a: 'since',
 			b: 'from',
@@ -792,6 +907,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 61,
+
 			question: 'We _____  work in that factory.',
 			a: 'use to',
 			b: 'were used to',
@@ -800,6 +917,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 62,
+
 			question: 'I think it _____  be sunny tomorrow.',
 			a: 'will probably',
 			b: 'probably',
@@ -808,6 +927,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 63,
+
 			question: 'He _____  like his brother.',
 			a: 'look',
 			b: "isn't",
@@ -816,6 +937,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 64,
+
 			question: '_____  does your English teacher look like?',
 			a: 'How',
 			b: 'What',
@@ -824,6 +947,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 65,
+
 			question: 'I’ve got _____  many problems.',
 			a: 'too',
 			b: 'a',
@@ -832,6 +957,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 66,
+
 			question: 'If we get up in time, _____ the train.',
 			a: 'we have caught',
 			b: 'we would catch',
@@ -840,6 +967,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 67,
+
 			question: 'They _____  to take a day off from work.',
 			a: 'decide',
 			b: 'deciding',
@@ -848,6 +977,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 68,
+
 			question: 'I’m working _____  to save enough money for a new flat.',
 			a: 'hardly',
 			b: 'lots',
@@ -856,6 +987,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 69,
+
 			question: 'I’m writing _____  to complain about the bad service.',
 			a: 'for',
 			b: 'in order',
@@ -864,6 +997,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 70,
+
 			question: 'We understand that most problems _____ by teenagers.',
 			a: 'cause',
 			b: 'caused',
@@ -872,6 +1007,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 71,
+
 			question: 'What _____  doing at the weekend?',
 			a: 'have you like',
 			b: 'are you liking',
@@ -880,6 +1017,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 72,
+
 			question: 'Football _____  in most countries.',
 			a: 'plays',
 			b: 'has played',
@@ -888,6 +1027,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 73,
+
 			question: 'Who was _____  the door?',
 			a: 'at',
 			b: 'on',
@@ -896,6 +1037,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 74,
+
 			question: 'The children _____ breakfast when you called.',
 			a: 'was having',
 			b: 'had',
@@ -904,6 +1047,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 75,
+
 			question: 'Your work is _____  better day by day.',
 			a: 'being',
 			b: 'doing',
@@ -912,6 +1057,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 76,
+
 			question: 'I could play the piano _____  I could speak.',
 			a: 'during',
 			b: 'while',
@@ -920,6 +1067,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 77,
+
 			question: 'The flight was cancelled, so we _____  to the airport.',
 			a: "didn't need to go",
 			b: "weren't able to go",
@@ -928,6 +1077,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 78,
+
 			question: 'The problem was _____  solved',
 			a: 'easy',
 			b: 'easy to',
@@ -936,6 +1087,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 79,
+
 			question: 'It was a difficult journey, but I _____  get home.',
 			a: 'should to',
 			b: 'managed to',
@@ -944,6 +1097,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 80,
+
 			question: 'We have  _____  heard the news.',
 			a: 'already',
 			b: 'always',
@@ -952,6 +1107,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 81,
+
 			question:
 				'They arrived at the station, but the train _____  earlier.',
 			a: 'has left',
@@ -961,6 +1118,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 82,
+
 			question: 'You can _____  walk or take a bus.',
 			a: 'both',
 			b: 'rather',
@@ -969,6 +1128,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 83,
+
 			question: 'If I _____  enough money, I’d  buy a house by the sea.',
 			a: 'had',
 			b: 'would have',
@@ -977,6 +1138,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 84,
+
 			question: 'The work  _____  correctly.',
 			a: "hasn't done",
 			b: "hasn't been done",
@@ -985,6 +1148,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 85,
+
 			question:
 				'The accident wouldn’t have happened if you had been more _____ .',
 			a: 'careful',
@@ -994,6 +1159,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 86,
+
 			question: 'It _____  be possible some time in the future.',
 			a: 'likely',
 			b: 'hopefully',
@@ -1002,6 +1169,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 87,
+
 			question: 'Schools then  _____ having more children in the class.',
 			a: 'was used to',
 			b: 'were used to',
@@ -1010,6 +1179,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 88,
+
 			question: 'We _____  to go to work at six in the morning.',
 			a: "mustn't",
 			b: "wouldn't",
@@ -1018,6 +1189,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 89,
+
 			question: 'Sally _____  an old photograph of the place.',
 			a: 'came up',
 			b: 'came across',
@@ -1026,6 +1199,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 90,
+
 			question: 'I _____  I had met her earlier.',
 			a: 'hope',
 			b: 'want',
@@ -1034,6 +1209,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 91,
+
 			question:
 				' We’ll have taken our exams _____  this time next month.',
 			a: 'by',
@@ -1043,6 +1220,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 92,
+
 			question: 'I will fail my exams, _____ prepare well in advance.',
 			a: "if I'm not",
 			b: "if I wasn't",
@@ -1051,6 +1230,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 93,
+
 			question: 'I  _____  wasted my time when I was at university.',
 			a: 'regret',
 			b: "shouldn't",
@@ -1059,6 +1240,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 94,
+
 			question:
 				'This is going to be my chance to _____  any difficulties.',
 			a: 'repair',
@@ -1068,6 +1251,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'b',
 		},
 		{
+			id: 95,
+
 			question:
 				'Working night shifts was difficult at first, but I soon _____  it.',
 			a: 'got used to',
@@ -1077,6 +1262,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 96,
+
 			question:
 				'I wonder how you managed to cook _____  a delicious meal!',
 			a: 'so',
@@ -1086,6 +1273,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 97,
+
 			question:
 				'The solution had been found _____  we hadn’t realised it.',
 			a: 'however',
@@ -1095,6 +1284,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'c',
 		},
 		{
+			id: 98,
+
 			question: 'Laura _____  what I had been doing for all that time.',
 			a: 'asked to me',
 			b: 'asked for me',
@@ -1103,6 +1294,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'd',
 		},
 		{
+			id: 99,
+
 			question:
 				'You _____  heard us coming because we were making a lot of noise.',
 			a: 'must have',
@@ -1112,6 +1305,8 @@ export const questions: { [A: string]: placementQuestion[] } = {
 			correct: 'a',
 		},
 		{
+			id: 100,
+
 			question: 'Jerry _____  to give me a hand with the shopping.',
 			a: 'suggested',
 			b: 'offered',

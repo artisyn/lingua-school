@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 import { RootState } from './store';
 
 const Container = styled.div`
-	color: ${(props) => (props.theme === 'light' ? 'black' : 'white')};
+	color: ${(props) => (props.theme === 'light' ? '#262626' : '#fcf6f6c5')};
 	background-color: ${(props) =>
-		props.theme === 'light' ? 'white' : 'black'};
+		props.theme === 'light' ? '#fcf6f6c5' : '#262626'};
 `;
 
 function App() {

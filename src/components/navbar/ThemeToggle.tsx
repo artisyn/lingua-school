@@ -4,8 +4,8 @@ import { MdDarkMode } from 'react-icons/md';
 import { MdLightMode } from 'react-icons/md';
 
 export enum CircleColors {
-	dark = 'lightblue',
-	light = '#111946',
+	dark = '#f9e4c2',
+	light = '#f9e4c2',
 }
 export enum IconColors {
 	dark = 'yellow',
@@ -13,7 +13,7 @@ export enum IconColors {
 }
 export enum BackgroundColors {
 	dark = 'linear-gradient(to right, #0c143b, #0f1742, #131a49, #171c51, #1b1f58);',
-	light = 'linear-gradient(to right, #3e6492, #467da8, #5096bd, #5fafd0, #72c9e2);',
+	light = 'linear-gradient(to right, #f9e4c2, #e9caae, #d7b19d, #c3998d, #ae827f);',
 }
 
 interface ThemeToggleProps {
@@ -50,7 +50,7 @@ const Circle = styled.div`
 `;
 const Night = styled.span`
 	position: absolute;
-	left: 0.2rem;
+	left: 0;
 	color: ${(props) => props.color};
 	display: flex;
 	align-items: center;
@@ -61,7 +61,7 @@ const Night = styled.span`
 
 const Light = styled.span`
 	position: absolute;
-	right: 0.2rem;
+	right: 0;
 	color: ${(props) => props.color};
 	display: flex;
 	align-items: center;

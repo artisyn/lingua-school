@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 import styled from 'styled-components';
 import logo from '../../src/logo.png';
 const Container = styled.div`
+	z-index: 9;
+	position: relative;
 	overflow: hidden;
 	border-bottom-left-radius: 50%;
 	border-bottom-right-radius: 20%;
@@ -29,13 +33,22 @@ const Image = styled.img`
 	object-fit: cover;
 	object-position: center;
 `;
+const Title = styled.h1`
+	width: 100%;
+	color: white;
+	text-align: center;
+	position: absolute;
+	bottom: 1.5rem;
+`;
 
 const LogoSection: FC = () => {
+	const page = useSelector((state: RootState) => state.page.value);
 	return (
 		<Container>
 			<LogoContainer>
 				<Image src={logo} alt="company logo" />
 			</LogoContainer>
+			<Title>{page}</Title>
 		</Container>
 	);
 };

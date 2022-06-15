@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useRef, RefObject } from 'react';
 import styled from 'styled-components';
 import { AiOutlineDown } from 'react-icons/ai';
 
@@ -7,6 +7,7 @@ interface DropDownInterface {
 	children?: React.ReactNode;
 	open: boolean;
 	handleClick: () => void;
+	close: () => void;
 }
 interface ChildrenInterface {
 	open: boolean;
@@ -20,6 +21,7 @@ const Container = styled.div`
 
 	display: flex;
 	align-items: center;
+	z-index: 11;
 `;
 const Button = styled.div`
 	cursor: pointer;
@@ -60,9 +62,34 @@ const DropDown: FC<DropDownInterface> = ({
 	children,
 	open,
 	handleClick,
+	close,
 }) => {
+	const dropRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const handleClickOutside = (e: Event): void => {
+			const el = dropRef?.current;
+			if (!el || el.contains(e.target as Node)) return;
+
+			close();
+		};
+		if (open) {
+			document.body.addEventListener('click', handleClickOutside);
+			return () =>
+				document.body.removeEventListener('click', handleClickOutside);
+		}
+
+		if (!open) {
+			document.body.removeEventListener('click', handleClickOutside);
+			return () =>
+				document.body.removeEventListener('click', handleClickOutside);
+		}
+		return () =>
+			document.body.removeEventListener('click', handleClickOutside);
+	}, [open]);
+
 	return (
-		<Container>
+		<Container ref={dropRef}>
 			<Button onClick={handleClick}>
 				{buttonText}
 				<LinkIcon open={open}>

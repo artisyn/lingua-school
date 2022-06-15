@@ -13,8 +13,9 @@ const Container = styled.div`
 	padding: 1rem;
 `;
 const Paragraph = styled.p`
+	line-height: 2rem;
 	font-size: 1.3rem;
-	letter-spacing: 0.05rem;
+	letter-spacing: 0.04rem;
 	max-width: 40rem;
 `;
 
