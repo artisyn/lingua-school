@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { questions } from '../../data/placementTestData';
 import BackDecoration from './BackDecoration';
 import QuestionBlock from './QuestionBlock';
+import { MdArrowRightAlt } from 'react-icons/md';
 
 interface PlacementInterface {
 	testLevel: string;
+	changeStage: (val: string) => void;
 }
 
 const Container = styled.div`
@@ -19,13 +21,46 @@ const Container = styled.div`
 	min-height: 60vh;
 `;
 
-const PlacementTest: FC<PlacementInterface> = ({ testLevel }) => {
+const Button = styled.button`
+	z-index: 5;
+	margin-top: 2rem;
+	color: white;
+	outline: none;
+	border: none;
+	border-radius: 1rem;
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	width: 12rem;
+	height: 3rem;
+	background-color: #efa34b;
+	text-align: left;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	transition: all ease 0.4s;
+	&:hover {
+		background-color: #efa24bc4;
+	}
+`;
+
+const PlacementTest: FC<PlacementInterface> = ({ testLevel, changeStage }) => {
 	return (
 		<Container>
 			<BackDecoration />
 			{questions[testLevel].map((el) => (
 				<QuestionBlock key={el.id} element={el} />
 			))}
+
+			<Button
+				onClick={() => {
+					changeStage('testFinish');
+				}}
+			>
+				Finish <MdArrowRightAlt />
+			</Button>
 		</Container>
 	);
 };

@@ -38,9 +38,14 @@ const PlacementTestPage: FC = () => {
 				/>
 			)}
 			{testStage === 'testStart' && (
-				<PlacementTest testLevel={testLevel} />
+				<PlacementTest
+					testLevel={testLevel}
+					changeStage={handleStage}
+				/>
 			)}
-			{testStage === 'testFinish' && <TestResults />}
+			{testStage === 'testFinish' && (
+				<TestResults testLevel={testLevel} changeStage={handleStage} />
+			)}
 			<Footer />
 		</Container>
 	);

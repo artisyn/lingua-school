@@ -1,5 +1,8 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../store';
+import { answerChange } from '../../features/placementTestAnswers/PlacementSlice';
 
 interface QuestionInterface {
 	element: {
@@ -16,10 +19,16 @@ interface BoxInterface {
 	boxSelected: string;
 }
 
-const Container = styled.div`
+interface ContainerInterface {
+	theme: string;
+}
+
+const Container = styled.div<ContainerInterface>`
 	z-index: 21;
-	/* background-color: ;
-	color: ; */
+
+	background-color: ${(props) =>
+		props.theme === 'light' ? '#fcf6f6c5' : '#262626'};
+	color: ${(props) => (props.theme === 'light' ? '#262626' : '#fcf6f6c5')};
 	flex: 1;
 	border: 2px solid #f7d571;
 	border-radius: 21% 79% 19% 81% / 80% 18% 82% 20%;
@@ -62,11 +71,25 @@ const Box = styled.div<BoxInterface>`
 
 const QuestionBlock: FC<QuestionInterface> = ({ element }) => {
 	const [answer, setAnswer] = useState<string>('');
+
+	const theme = useSelector((state: RootState) => state.theme.value);
+	const placementAnswers = useSelector(
+		(state: RootState) => state.placementAnswers.value
+	);
+
+	const dispatch = useDispatch();
+	const handleAnswerChange = (id: number, val: string): void => {
+		const updatedAnswers = { ...placementAnswers };
+		updatedAnswers[id] = val;
+		dispatch(answerChange(updatedAnswers));
+	};
 	const handleClick = (val: string): void => {
 		setAnswer(val);
+		handleAnswerChange(element.id, val);
 	};
+
 	return (
-		<Container>
+		<Container theme={theme}>
 			<QuestionNumber>Question No. {element.id}</QuestionNumber>
 			<QuestionText>{element.question}</QuestionText>
 			<AnswerContainer

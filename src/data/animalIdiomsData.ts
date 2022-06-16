@@ -6,6 +6,7 @@ interface idiomObj {
 	b: string;
 	c: string;
 	d: string;
+	correct: string;
 }
 
 export const idioms: idiomObj[] = [
@@ -18,6 +19,7 @@ export const idioms: idiomObj[] = [
 		b: 'birds',
 		c: 'dogs',
 		d: 'snakes',
+		correct: 'dogs',
 	},
 	{
 		idiom: 'A little bird told me',
@@ -28,6 +30,7 @@ export const idioms: idiomObj[] = [
 		b: 'bird',
 		c: 'cat',
 		d: 'zebra',
+		correct: 'bird',
 	},
 	{
 		idiom: 'Bull in a china shop',
@@ -39,6 +42,7 @@ export const idioms: idiomObj[] = [
 		b: 'elephant',
 		c: 'cobra',
 		d: 'scorpion',
+		correct: 'bull',
 	},
 	{
 		idiom: 'Butterflies in one’s stomach',
@@ -49,6 +53,7 @@ export const idioms: idiomObj[] = [
 		b: 'birds',
 		c: 'butterflies',
 		d: 'bees',
+		correct: 'butterflies',
 	},
 	{
 		idiom: 'Keep the wolf from the door',
@@ -59,6 +64,7 @@ export const idioms: idiomObj[] = [
 		b: 'tiger',
 		c: 'lion',
 		d: 'bear',
+		correct: 'wolf',
 	},
 	{
 		idiom: 'You can’t teach an old dog new tricks',
@@ -70,6 +76,7 @@ export const idioms: idiomObj[] = [
 		b: 'dog',
 		c: 'parrot',
 		d: 'monkey',
+		correct: 'dog',
 	},
 	{
 		idiom: 'I’ll be a monkey’s uncle',
@@ -80,6 +87,7 @@ export const idioms: idiomObj[] = [
 		b: "wolve's",
 		c: "shark's",
 		d: "monkey's",
+		correct: "monkey's",
 	},
 	{
 		idiom: 'Hold your horses',
@@ -90,6 +98,7 @@ export const idioms: idiomObj[] = [
 		b: 'dogs',
 		c: 'bulls',
 		d: 'horses',
+		correct: 'horses',
 	},
 	{
 		idiom: 'Guinea pig',
@@ -100,6 +109,7 @@ export const idioms: idiomObj[] = [
 		b: 'donkeys',
 		c: 'mice',
 		d: 'rats',
+		correct: 'pigs',
 	},
 	{
 		idiom: 'Get one’s ducks in a row',
@@ -110,6 +120,7 @@ export const idioms: idiomObj[] = [
 		b: 'chickens',
 		c: 'ducks',
 		d: 'deers',
+		correct: 'ducks',
 	},
 	{
 		idiom: 'Take the bull by the horns',
@@ -121,6 +132,7 @@ export const idioms: idiomObj[] = [
 		b: 'bull',
 		c: 'buffalo',
 		d: 'elk',
+		correct: 'bull',
 	},
 	{
 		idiom: 'Do the donkey work',
@@ -130,6 +142,7 @@ export const idioms: idiomObj[] = [
 		b: 'donkey',
 		c: 'horse',
 		d: 'dog',
+		correct: 'donkey',
 	},
 
 	{
@@ -141,6 +154,7 @@ export const idioms: idiomObj[] = [
 		b: 'pig',
 		c: 'deer',
 		d: 'horse',
+		correct: 'horse',
 	},
 	{
 		idiom: 'Cat nap',
@@ -151,6 +165,7 @@ export const idioms: idiomObj[] = [
 		b: 'cat',
 		c: 'leopard',
 		d: 'snake',
+		correct: 'cat',
 	},
 	{
 		idiom: 'Chicken out',
@@ -162,6 +177,7 @@ export const idioms: idiomObj[] = [
 		b: 'dogged',
 		c: 'moused',
 		d: 'pigged',
+		correct: 'chickened',
 	},
 	{
 		idiom: 'Have a cow',
@@ -172,6 +188,7 @@ export const idioms: idiomObj[] = [
 		b: 'crow',
 		c: 'cow',
 		d: 'deer',
+		correct: 'cow',
 	},
 	{
 		idiom: 'Kitty corner',
@@ -181,6 +198,7 @@ export const idioms: idiomObj[] = [
 		b: 'bird',
 		c: 'mouse',
 		d: 'elk',
+		correct: 'kitty',
 	},
 	{
 		idiom: 'Eager beaver',
@@ -191,6 +209,7 @@ export const idioms: idiomObj[] = [
 		b: 'beaver',
 		c: 'bee',
 		d: 'dolphin',
+		correct: 'beaver',
 	},
 	{
 		idiom: 'Smell a rat',
@@ -200,6 +219,7 @@ export const idioms: idiomObj[] = [
 		b: 'cat',
 		c: 'goat',
 		d: 'bat',
+		correct: 'rat',
 	},
 	{
 		idiom: 'Dropping like flies',
@@ -209,6 +229,7 @@ export const idioms: idiomObj[] = [
 		b: 'flies',
 		c: 'tigers',
 		d: 'boars',
+		correct: 'flies',
 	},
 ];
 
