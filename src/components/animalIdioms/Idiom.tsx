@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useRef, RefObject } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
@@ -69,67 +69,135 @@ const AnswerBlock = styled.div<Box>`
 		background-color: #f7d67161;
 	}
 `;
+const AfterBlock = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+`;
+const AfterIdiom = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 1.2rem;
+	font-style: italic;
+	border: 1px solid #f7d571;
+	padding: 0.3rem;
+`;
+const AfterIdiomMeaning = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 1.2rem;
+	font-style: italic;
+	border: 1px solid #f7d571;
+	padding: 0.3rem;
+`;
+
+const BoldText = styled.div`
+	font-weight: bold;
+	font-style: normal;
+`;
 
 const Idiom: FC<IdiomInterface> = ({ element }) => {
 	const theme = useSelector((state: RootState) => state.theme.value);
 	const [userAnswer, setUserAnswer] = useState<string>('');
 	const [pickEnd, setPickEnd] = useState<boolean>(false);
+	const aRef = useRef<HTMLDivElement | null>(null);
+	const bRef = useRef<HTMLDivElement | null>(null);
+	const cRef = useRef<HTMLDivElement | null>(null);
+	const dRef = useRef<HTMLDivElement | null>(null);
+	const mainRef = useRef<HTMLDivElement | null>(null);
 
-	const handleClick = (val: string): void => {
+	const handleClick = (
+		val: string,
+		ref: null | HTMLElement,
+		mainR: null | HTMLElement
+	): void => {
 		setUserAnswer(val);
 		setPickEnd(true);
 
-		if (val === element.correct) {
-		}
 		if (val !== element.correct) {
-			//lost
+			let x = ref;
+
+			if (x) {
+				x.style.backgroundColor = '#F8776D';
+			}
+		}
+		let y = mainR;
+		if (y) {
+			y.style.pointerEvents = 'none';
 		}
 	};
 	return (
-		<Container theme={theme}>
+		<Container theme={theme} ref={mainRef}>
 			<Question>{element.question}</Question>
 			<AnswerContainer>
 				<AnswerBlock
+					ref={aRef}
 					boxSelected={
-						element.a === element.correct && pickEnd ? 'green' : ''
+						element.a === element.correct && pickEnd
+							? '#fea141'
+							: ''
 					}
 					onClick={() => {
-						handleClick(element.a);
+						handleClick(element.a, aRef?.current, mainRef.current);
 					}}
 				>
 					{element.a}
 				</AnswerBlock>
 				<AnswerBlock
+					ref={bRef}
 					boxSelected={
-						element.b === element.correct && pickEnd ? 'green' : ''
+						element.b === element.correct && pickEnd
+							? '#fea141'
+							: ''
 					}
 					onClick={() => {
-						handleClick(element.b);
+						handleClick(element.b, bRef?.current, mainRef.current);
 					}}
 				>
 					{element.b}
 				</AnswerBlock>
 				<AnswerBlock
+					ref={cRef}
 					boxSelected={
-						element.c === element.correct && pickEnd ? 'green' : ''
+						element.c === element.correct && pickEnd
+							? '#fea141'
+							: ''
 					}
 					onClick={() => {
-						handleClick(element.c);
+						handleClick(element.c, cRef?.current, mainRef.current);
 					}}
 				>
 					{element.c}
 				</AnswerBlock>
 				<AnswerBlock
+					ref={dRef}
 					boxSelected={
-						element.d === element.correct && pickEnd ? 'green' : ''
+						element.d === element.correct && pickEnd
+							? '#fea141'
+							: ''
 					}
 					onClick={() => {
-						handleClick(element.d);
+						handleClick(element.d, dRef?.current, mainRef.current);
 					}}
 				>
 					{element.d}
 				</AnswerBlock>
 			</AnswerContainer>
+			{pickEnd ? (
+				<AfterBlock>
+					<AfterIdiom>
+						<BoldText>Idiom:</BoldText> {element.idiom}
+					</AfterIdiom>
+					<AfterIdiomMeaning>
+						<BoldText>Meaning:</BoldText> {element.definition}
+					</AfterIdiomMeaning>
+				</AfterBlock>
+			) : (
+				''
+			)}
 		</Container>
 	);
 };

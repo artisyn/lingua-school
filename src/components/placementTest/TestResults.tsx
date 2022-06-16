@@ -8,6 +8,7 @@ import { questions, answersEvaluation } from '../../data/placementTestData';
 import { objectTraps } from 'immer/dist/internal';
 import { MdArrowRightAlt } from 'react-icons/md';
 import { FiCopy } from 'react-icons/fi';
+import logo from '../../results.png';
 
 interface ResultsInterface {
 	testLevel: string;
@@ -18,23 +19,36 @@ interface FuncStr {
 }
 
 const Container = styled.div`
+	position: relative;
 	padding: 3rem;
 	min-height: 60vh;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 `;
+const Image = styled.img`
+	z-index: 1;
+	position: absolute;
+	right: 10%;
+	max-width: 20rem;
+`;
 
 const Title = styled.h1`
 	margin-bottom: 2rem;
+	z-index: 5;
 `;
 const ResultsContainer = styled.div`
+	background-color: ${(props) =>
+		props.theme === 'light' ? '#fcf6f6c5' : '#262626'};
+	color: ${(props) => (props.theme === 'light' ? '#262626' : '#fcf6f6c5')};
+	z-index: 5;
 	border: 2px solid #f7d571;
 	border-radius: 21% 79% 19% 81% / 80% 18% 82% 20%;
 	width: 35rem;
 	padding: 5rem;
 `;
 const ResultElement = styled.div`
+	z-index: 5;
 	border: 2px solid #f7d571;
 	border-radius: 21% 79% 19% 81% / 80% 18% 82% 20%;
 	width: 25rem;
@@ -48,6 +62,7 @@ const ResultElement = styled.div`
 	margin-bottom: 1rem;
 `;
 const ResultElementFinal = styled.div`
+	z-index: 5;
 	border: 2px solid #f7d571;
 	border-radius: 21% 79% 19% 81% / 80% 18% 82% 20%;
 	width: 25rem;
@@ -119,12 +134,12 @@ const AgainButton = styled.button`
 `;
 
 const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
+	const theme = useSelector((state: RootState) => state.theme.value);
 	const [totalCorrect, setTotalCorrect] = useState<number>(0);
 	const [userLevel, setUserLevel] = useState('');
 	const placementAnswers = useSelector(
 		(state: RootState) => state.placementAnswers.value
 	);
-	console.log(placementAnswers);
 
 	/// Evaluation Logic
 	const determineUsersLevel = (num: number): string => {
@@ -143,7 +158,6 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 
 		const totalCorrectans: number = questions[testLevel].reduce(
 			(accu, el, i) => {
-				console.log(userAnswers[i + 1], el.correct);
 				if (userAnswers[i + 1].toLowerCase() === el.correct)
 					return accu + 1;
 				return accu;
@@ -156,7 +170,6 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 		setUserLevel(userLevel);
 	};
 
-	console.log(Object.entries(placementAnswers));
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -188,9 +201,10 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 
 	return (
 		<Container>
+			<Image src={logo} />
 			<Title>YOUR TEST RESULTS:</Title>
 
-			<ResultsContainer>
+			<ResultsContainer theme={theme}>
 				<ResultElement>
 					Test Level: <BoldElement>{testLevel}</BoldElement>
 				</ResultElement>
@@ -204,8 +218,11 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 				<ResultElementFinal>
 					Your Answers:
 					<AnswersContainer>
-						{Object.entries(placementAnswers).map((el) => (
-							<AnswerUnit> {`${el[0]} / ${el[1]}`}</AnswerUnit>
+						{Object.entries(placementAnswers).map((el, i) => (
+							<AnswerUnit key={i}>
+								{' '}
+								{`${el[0]} / ${el[1]}`}
+							</AnswerUnit>
 						))}
 					</AnswersContainer>
 				</ResultElementFinal>

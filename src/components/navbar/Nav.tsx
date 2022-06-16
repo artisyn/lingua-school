@@ -11,9 +11,15 @@ import NavLink from './NavLink';
 import DropDown from './DropDown';
 
 interface NavProps {}
+interface ContainerInterface {
+	show: boolean;
+}
 
-const Container = styled.div`
-	z-index: 10;
+const Container = styled.div<ContainerInterface>`
+	position: ${(props) => (props.show ? 'sticky' : '')};
+	top: 0;
+	background-color: #fe9e3f;
+	z-index: 100;
 	background: linear-gradient(
 		to right,
 		#fe9e3f,
@@ -29,23 +35,31 @@ const Container = styled.div`
 	height: 5rem;
 `;
 const LinksContainer = styled.div`
+	z-index: 20;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+	///////////////////
+	@media only screen and (max-width: 800px) {
+		display: none;
+	}
 `;
 
 const ThemeContainer = styled.div`
+	z-index: 20;
 	display: flex;
 
 	align-items: center;
 `;
 const ThemeText = styled.div`
+	z-index: 20;
 	font-size: 1rem;
 	font-weight: bold;
 	width: 6rem;
 	color: ${(props) => (props.theme === 'light' ? 'white' : 'black')};
 `;
 const LogoText = styled.div`
+	z-index: 20;
 	font-size: 1.4rem;
 	font-weight: bold;
 	letter-spacing: 0.07rem;
@@ -53,6 +67,18 @@ const LogoText = styled.div`
 `;
 
 const Nav: FC<NavProps> = () => {
+	const [show, setShow] = useState<boolean>(false);
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 400) setShow(true);
+			if (window.scrollY < 400) setShow(false);
+		});
+
+		return () => {
+			window.removeEventListener('scroll', () => {});
+		};
+	}, []);
 	const theme = useSelector((state: RootState) => state.theme.value);
 	const page = useSelector((state: RootState) => state.page.value);
 	const dispatch = useDispatch();
@@ -80,7 +106,7 @@ const Nav: FC<NavProps> = () => {
 	};
 
 	return (
-		<Container>
+		<Container show={show}>
 			<LogoText>Lingua Plus.</LogoText>
 			<LinksContainer>
 				<NavLink link={'/Home'} customcolor="white" customfont="1.2rem">

@@ -56,6 +56,10 @@ const PlacementTest: FC<PlacementInterface> = ({ testLevel, changeStage }) => {
 
 			<Button
 				onClick={() => {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth',
+					});
 					changeStage('testFinish');
 				}}
 			>

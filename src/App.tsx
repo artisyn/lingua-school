@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PageRoutes from './pages/PageRoutes';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
+import ScrollToTop from './components/ScrollToTop';
 
 const Container = styled.div`
 	color: ${(props) => (props.theme === 'light' ? '#262626' : '#fcf6f6c5')};
@@ -13,9 +14,11 @@ const Container = styled.div`
 function App() {
 	const theme = useSelector((state: RootState) => state.theme.value);
 	return (
-		<Container theme={theme}>
-			<PageRoutes />
-		</Container>
+		<ScrollToTop>
+			<Container theme={theme}>
+				<PageRoutes />
+			</Container>
+		</ScrollToTop>
 	);
 }
 
