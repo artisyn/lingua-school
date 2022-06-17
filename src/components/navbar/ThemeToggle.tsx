@@ -35,6 +35,11 @@ const Container = styled.div`
 	cursor: pointer;
 	background: ${(props) => props.color};
 	transition: all ease-in-out 0.4s;
+	@media only screen and (max-width: 800px) {
+		width: 3rem;
+		height: 1.5rem;
+		margin-left: 0.5rem;
+	}
 `;
 
 const Circle = styled.div`
@@ -47,6 +52,12 @@ const Circle = styled.div`
 	background-color: ${(props) => props.color};
 	transform: ${(props) =>
 		props.theme === 'light' ? '' : 'translateX(3rem)'};
+	@media only screen and (max-width: 800px) {
+		width: 1.1rem;
+		height: 1.1rem;
+		transform: ${(props) =>
+			props.theme === 'light' ? '' : 'translateX(1.9rem)'};
+	}
 `;
 const Night = styled.span`
 	position: absolute;
@@ -57,6 +68,9 @@ const Night = styled.span`
 	justify-content: center;
 	font-size: 1.3rem;
 	opacity: ${(props) => (props.theme === 'dark' ? '1' : '0')};
+	@media only screen and (max-width: 800px) {
+		font-size: 1rem;
+	}
 `;
 
 const Light = styled.span`
@@ -68,6 +82,9 @@ const Light = styled.span`
 	justify-content: center;
 	font-size: 1.3rem;
 	opacity: ${(props) => (props.theme === 'dark' ? '0' : '1')};
+	@media only screen and (max-width: 800px) {
+		font-size: 1rem;
+	}
 `;
 
 const ThemeToggle: FC<ThemeToggleProps> = ({

@@ -21,7 +21,7 @@ const Button = styled.button`
 	color: white;
 	outline: none;
 	border: none;
-	border-radius: 1rem;
+	border-radius: 5px;
 	padding: 0.4rem;
 	font-size: 1.2rem;
 	font-weight: bold;
@@ -39,17 +39,68 @@ const Button = styled.button`
 		background-color: #efa24bc4;
 	}
 `;
+const IntroContainer = styled.div`
+	padding-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
+const Rules = styled.p`
+	font-size: 1.4rem;
+	font-weight: 500;
+	padding: 0.5rem;
+`;
+const Colors = styled.div``;
+const Box1 = styled.div`
+	width: 2rem;
+	height: 2rem;
+	border-radius: 4px;
+	background-color: #f8776d;
+`;
+const Box2 = styled.div`
+	width: 2rem;
+	height: 2rem;
+	border-radius: 4px;
+	background-color: #fea141;
+`;
+const ColorsItem = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1rem;
+`;
 const AnimalIdioms: FC = () => {
 	const [quizStage, setQuizStage] = useState<string>('quizStart');
+	const handleClick = (): void => {
+		setQuizStage('ssss');
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+		setTimeout(() => {
+			setQuizStage('quizStart');
+		}, 100);
+	};
 	return (
 		<Container>
+			<IntroContainer>
+				<Rules>Pick an animal that is missing from the sentence.</Rules>
+				<Colors>
+					<ColorsItem>
+						<Box1></Box1> <Rules>Answer is incorrect</Rules>
+					</ColorsItem>
+					<ColorsItem>
+						<Box2></Box2> <Rules>Answer is correct</Rules>
+					</ColorsItem>
+				</Colors>
+			</IntroContainer>
 			{quizStage === 'quizStart' ? (
 				<Wrapper>
 					{idioms.map((el, i) => (
 						<Idiom key={i} element={el} />
 					))}
-					<Button>
-						Retry <MdArrowRightAlt />{' '}
+					<Button onClick={handleClick}>
+						Retry <MdArrowRightAlt />
 					</Button>
 				</Wrapper>
 			) : (

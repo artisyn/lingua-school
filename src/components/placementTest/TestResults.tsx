@@ -31,6 +31,9 @@ const Image = styled.img`
 	position: absolute;
 	right: 10%;
 	max-width: 20rem;
+	@media only screen and (max-width: 1000px) {
+		display: none;
+	} ;
 `;
 
 const Title = styled.h1`
@@ -46,6 +49,14 @@ const ResultsContainer = styled.div`
 	border-radius: 21% 79% 19% 81% / 80% 18% 82% 20%;
 	width: 35rem;
 	padding: 5rem;
+	@media only screen and (max-width: 800px) {
+		width: 95vw;
+		max-width: 500px;
+	}
+	@media only screen and (max-width: 550px) {
+		border: none;
+		padding: 1rem;
+	} ;
 `;
 const ResultElement = styled.div`
 	z-index: 5;
@@ -60,6 +71,14 @@ const ResultElement = styled.div`
 	align-items: center;
 	gap: 1rem;
 	margin-bottom: 1rem;
+	@media only screen and (max-width: 800px) {
+		width: 95%;
+	}
+	@media only screen and (max-width: 550px) {
+		width: 100%;
+		border-radius: 4px;
+		padding: 0.5rem;
+	} ;
 `;
 const ResultElementFinal = styled.div`
 	z-index: 5;
@@ -74,6 +93,14 @@ const ResultElementFinal = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
+	@media only screen and (max-width: 800px) {
+		width: 95%;
+	}
+	@media only screen and (max-width: 5500px) {
+		width: 100%;
+		border-radius: 4px;
+		padding: 0.5rem;
+	} ;
 `;
 const BoldElement = styled.div`
 	width: fit-content;
@@ -114,7 +141,7 @@ const AgainButton = styled.button`
 	color: white;
 	outline: none;
 	border: none;
-	border-radius: 1rem;
+	border-radius: 5px;
 	padding: 0.4rem;
 	font-size: 1.2rem;
 	font-weight: bold;

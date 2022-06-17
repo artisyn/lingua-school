@@ -21,7 +21,7 @@ const Container = styled.div`
 
 	display: flex;
 	align-items: center;
-	z-index: 11;
+	z-index: 102;
 `;
 const Button = styled.div`
 	cursor: pointer;

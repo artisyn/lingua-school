@@ -13,6 +13,9 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	min-height: 30vh;
+	@media only screen and (max-width: 735px) {
+		flex-direction: column;
+	}
 `;
 
 const ClickableBox = styled.div`
@@ -47,6 +50,9 @@ const TextContainer = styled.div`
 	font-size: 1.3rem;
 	font-weight: bold;
 	letter-spacing: 0.08rem;
+	@media only screen and (max-width: 735px) {
+		font-size: 1.1rem;
+	}
 `;
 const BoxButton = styled.button`
 	color: white;
@@ -67,6 +73,9 @@ const BoxButton = styled.button`
 	transition: all ease 0.4s;
 	&:hover {
 		background-color: #efa24bc4;
+	}
+	@media only screen and (max-width: 735px) {
+		font-size: 1rem;
 	}
 `;
 const Symbol = styled.span`

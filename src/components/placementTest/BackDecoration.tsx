@@ -15,6 +15,9 @@ const Container = styled.div`
 	height: 100%;
 	height: 80vh;
 	width: 100%;
+	@media only screen and (max-width: 1000px) {
+		display: none;
+	} ;
 `;
 const fall = keyframes`
 from {

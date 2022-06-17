@@ -40,11 +40,19 @@ const Container = styled.div<ContainerInterface>`
 	align-items: left;
 	justify-content: center;
 	gap: 0.5rem;
+
+	@media only screen and (max-width: 800px) {
+		width: 95vw;
+	} ;
 `;
 const QuestionNumber = styled.div``;
 const QuestionText = styled.p`
 	font-size: 1.4rem;
 	font-weight: 500;
+	@media only screen and (max-width: 800px) {
+		font-size: 1.2rem;
+		font-weight: 500;
+	} ;
 `;
 const AnswerContainer = styled.div`
 	cursor: pointer;

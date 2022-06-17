@@ -40,6 +40,11 @@ const Container = styled.div`
 	align-items: left;
 	justify-content: center;
 	gap: 1rem;
+	@media only screen and (max-width: 800px) {
+		width: 90vw;
+		max-width: 640px;
+		padding: 4rem;
+	} ;
 `;
 const Question = styled.p`
 	font-size: 1.3rem;
@@ -53,6 +58,9 @@ const AnswerContainer = styled.div`
 	gap: 1rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
+	@media only screen and (max-width: 800px) {
+		grid-template-columns: 1fr 1fr;
+	} ;
 `;
 const AnswerBlock = styled.div<Box>`
 	font-size: 1.2rem;
@@ -68,6 +76,7 @@ const AnswerBlock = styled.div<Box>`
 	&:hover {
 		background-color: #f7d67161;
 	}
+	/* max-width: 10rem; */
 `;
 const AfterBlock = styled.div`
 	width: 100%;
@@ -83,6 +92,10 @@ const AfterIdiom = styled.div`
 	font-style: italic;
 	border: 1px solid #f7d571;
 	padding: 0.3rem;
+	@media only screen and (max-width: 800px) {
+		flex-direction: column;
+		gap: 0.5rem;
+	} ;
 `;
 const AfterIdiomMeaning = styled.div`
 	display: flex;
@@ -92,6 +105,10 @@ const AfterIdiomMeaning = styled.div`
 	font-style: italic;
 	border: 1px solid #f7d571;
 	padding: 0.3rem;
+	@media only screen and (max-width: 800px) {
+		flex-direction: column;
+		gap: 0.5rem;
+	} ;
 `;
 
 const BoldText = styled.div`

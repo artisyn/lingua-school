@@ -9,10 +9,14 @@ import { MdArrowRightAlt } from 'react-icons/md';
 
 import NavLink from './NavLink';
 import DropDown from './DropDown';
+import MobileMenu from './MobileMenu';
 
 interface NavProps {}
 interface ContainerInterface {
 	show: boolean;
+}
+interface MobileInterface {
+	open: boolean;
 }
 
 const Container = styled.div<ContainerInterface>`
@@ -52,6 +56,9 @@ const ThemeContainer = styled.div`
 	align-items: center;
 `;
 const ThemeText = styled.div`
+	@media only screen and (max-width: 800px) {
+		display: none;
+	}
 	z-index: 20;
 	font-size: 1rem;
 	font-weight: bold;
@@ -59,6 +66,7 @@ const ThemeText = styled.div`
 	color: ${(props) => (props.theme === 'light' ? 'white' : 'black')};
 `;
 const LogoText = styled.div`
+	min-width: 9rem;
 	z-index: 20;
 	font-size: 1.4rem;
 	font-weight: bold;
@@ -66,8 +74,57 @@ const LogoText = styled.div`
 	color: white;
 `;
 
+const MobileContainer = styled.div`
+	display: none;
+	width: 100%;
+	@media only screen and (max-width: 800px) {
+		display: flex;
+	}
+`;
+const MobileNavContainer = styled.div<MobileInterface>`
+	padding-top: 2rem;
+	z-index: 100;
+	position: absolute;
+	top: 5rem;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1rem;
+	display: ${(props) => (props.open ? '' : 'none')};
+	height: ${(props) => (props.open ? '100vh' : '0')};
+	width: ${(props) => (props.open ? '100%' : '0')};
+
+	background-color: #000000a8;
+
+	@media only screen and (min-width: 800px) {
+		display: none;
+	}
+`;
+const MobileSection = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+`;
+const MobileItem = styled.div``;
+const SectionTitle = styled.h3`
+	color: white;
+	font-size: 1.2rem;
+`;
+const SectionItem = styled.div`
+	border: 1px solid orange;
+	border-radius: 5px;
+	padding: 0.3rem;
+	margin-left: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
 const Nav: FC<NavProps> = () => {
 	const [show, setShow] = useState<boolean>(false);
+	const [open, setOpen] = useState<boolean>(false);
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
@@ -103,6 +160,9 @@ const Nav: FC<NavProps> = () => {
 	};
 	const handleQuizzesClose = (): void => {
 		setQuizzesOpen(false);
+	};
+	const handleOpen = (): void => {
+		setOpen(!open);
 	};
 
 	return (
@@ -150,7 +210,9 @@ const Nav: FC<NavProps> = () => {
 					</NavLink>
 				</DropDown>
 			</LinksContainer>
-
+			<MobileContainer>
+				<MobileMenu open={open} setOpen={handleOpen}></MobileMenu>
+			</MobileContainer>
 			<ThemeContainer>
 				<ThemeText theme={theme}>
 					{theme === 'light' ? 'Light Mode' : 'Dark Mode'}
@@ -173,6 +235,68 @@ const Nav: FC<NavProps> = () => {
 					theme={theme}
 				/>
 			</ThemeContainer>
+			<MobileNavContainer open={open}>
+				<MobileItem
+					onClick={() => {
+						setOpen(!open);
+					}}
+				>
+					<NavLink
+						link={'/Home'}
+						customcolor="white"
+						customfont="1.2rem"
+					>
+						HOME
+					</NavLink>
+				</MobileItem>
+				<MobileItem
+					onClick={() => {
+						setOpen(!open);
+					}}
+				>
+					<NavLink
+						link={'/Guide'}
+						customcolor="white"
+						customfont="1.2rem"
+					>
+						GUIDE
+					</NavLink>
+				</MobileItem>
+				<MobileSection>
+					<SectionTitle>Tests:</SectionTitle>
+					<SectionItem
+						onClick={() => {
+							setOpen(!open);
+						}}
+					>
+						<NavLink
+							link={'/Placement-test'}
+							customcolor="white"
+							customfont="1rem"
+						>
+							Placement Test
+							<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
+						</NavLink>
+					</SectionItem>
+				</MobileSection>
+				<MobileSection>
+					<SectionTitle>Quizzes:</SectionTitle>
+					<SectionItem
+						onClick={() => {
+							setOpen(!open);
+						}}
+					>
+						<NavLink
+							link={'/Animal-idioms'}
+							customcolor="white"
+							customfont="1rem"
+						>
+							Animal Idioms
+							<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
+						</NavLink>
+					</SectionItem>
+				</MobileSection>
+			</MobileNavContainer>
 		</Container>
 	);
 };
