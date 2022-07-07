@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
-import { idioms } from '../../data/animalIdiomsData';
+import { idioms } from '../../data/colorIdiomsData';
 import Idiom from './Idiom';
 import { MdArrowRightAlt } from 'react-icons/md';
 
@@ -74,16 +74,9 @@ const ResultsBox = styled.div`
 	width: 10rem;
 	height: 3rem;
 `;
-const AnimalIdioms: FC = () => {
+
+const ColorIdioms: FC = () => {
 	const [quizStage, setQuizStage] = useState<string>('quizStart');
-	const [correct, setCorrect] = useState<number>(0);
-	const [total, setTotal] = useState<number>(20);
-	const updateCorrect = (): void => {
-		setCorrect(correct + 1);
-	};
-	const updateTotal = (): void => {
-		setTotal(total - 1);
-	};
 	const handleClick = (): void => {
 		setQuizStage('ssss');
 		window.scrollTo({
@@ -94,10 +87,18 @@ const AnimalIdioms: FC = () => {
 			setQuizStage('quizStart');
 		}, 100);
 	};
+	const [correct, setCorrect] = useState<number>(0);
+	const [total, setTotal] = useState<number>(20);
+	const updateCorrect = (): void => {
+		setCorrect(correct + 1);
+	};
+	const updateTotal = (): void => {
+		setTotal(total - 1);
+	};
 	return (
 		<Container>
 			<IntroContainer>
-				<Rules>Pick an animal that is missing from the sentence.</Rules>
+				<Rules>Pick a color that is missing from the sentence.</Rules>
 				<Colors>
 					<ColorsItem>
 						<Box1></Box1> <Rules>Answer is incorrect</Rules>
@@ -107,7 +108,6 @@ const AnimalIdioms: FC = () => {
 					</ColorsItem>
 				</Colors>
 			</IntroContainer>
-
 			{quizStage === 'quizStart' ? (
 				<Wrapper>
 					{idioms.map((el, i) => (
@@ -134,9 +134,9 @@ const AnimalIdioms: FC = () => {
 			) : (
 				''
 			)}
-			{quizStage === 'quizFinish' ? <ResultsBox /> : ''}
+			{quizStage === 'quizFinish' ? '' : ''}
 		</Container>
 	);
 };
 
-export default AnimalIdioms;
+export default ColorIdioms;

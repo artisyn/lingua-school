@@ -14,6 +14,7 @@ import MobileMenu from './MobileMenu';
 interface NavProps {}
 interface ContainerInterface {
 	show: boolean;
+	open: boolean;
 }
 interface MobileInterface {
 	open: boolean;
@@ -21,6 +22,7 @@ interface MobileInterface {
 
 const Container = styled.div<ContainerInterface>`
 	position: ${(props) => (props.show ? 'sticky' : '')};
+	position: ${(props) => (props.open ? 'sticky' : '')};
 	top: 0;
 	background-color: #fe9e3f;
 	z-index: 100;
@@ -96,18 +98,21 @@ const MobileNavContainer = styled.div<MobileInterface>`
 	height: ${(props) => (props.open ? '100vh' : '0')};
 	width: ${(props) => (props.open ? '100%' : '0')};
 
-	background-color: #000000a8;
+	background-color: #000000d7;
 
 	@media only screen and (min-width: 800px) {
 		display: none;
 	}
+	overflow-y: scroll;
 `;
 const MobileSection = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 `;
-const MobileItem = styled.div``;
+const MobileItem = styled.div`
+	border: 1px solid white;
+`;
 const SectionTitle = styled.h3`
 	color: white;
 	font-size: 1.2rem;
@@ -166,16 +171,22 @@ const Nav: FC<NavProps> = () => {
 	};
 
 	return (
-		<Container show={show}>
+		<Container show={show} open={open}>
 			<LogoText>Lingua Plus.</LogoText>
 			<LinksContainer>
-				<NavLink link={'/Home'} customcolor="white" customfont="1.2rem">
+				<NavLink
+					link={'/Home'}
+					customcolor="white"
+					customfont="1.2rem"
+					customminw={0}
+				>
 					HOME
 				</NavLink>
 				<NavLink
 					link={'/Guide'}
 					customcolor="white"
 					customfont="1.2rem"
+					customminw={0}
 				>
 					GUIDE
 				</NavLink>
@@ -189,6 +200,7 @@ const Nav: FC<NavProps> = () => {
 						link={'/Placement-test'}
 						customcolor="white"
 						customfont="1rem"
+						customminw={0}
 					>
 						Placement Test
 						<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
@@ -204,8 +216,18 @@ const Nav: FC<NavProps> = () => {
 						link={'/Animal-idioms'}
 						customcolor="white"
 						customfont="1rem"
+						customminw={0}
 					>
 						Animal Idioms
+						<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
+					</NavLink>
+					<NavLink
+						link={'/Color-idioms'}
+						customcolor="white"
+						customfont="1rem"
+						customminw={0}
+					>
+						Color Idioms
 						<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
 					</NavLink>
 				</DropDown>
@@ -236,7 +258,7 @@ const Nav: FC<NavProps> = () => {
 				/>
 			</ThemeContainer>
 			<MobileNavContainer open={open}>
-				<MobileItem
+				<SectionItem
 					onClick={() => {
 						setOpen(!open);
 					}}
@@ -244,24 +266,28 @@ const Nav: FC<NavProps> = () => {
 					<NavLink
 						link={'/Home'}
 						customcolor="white"
-						customfont="1.2rem"
+						customfont="1rem"
+						customminw={0}
 					>
 						HOME
+						<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
 					</NavLink>
-				</MobileItem>
-				<MobileItem
+				</SectionItem>
+				<SectionItem
 					onClick={() => {
 						setOpen(!open);
 					}}
 				>
 					<NavLink
-						link={'/Guide'}
+						link={'/GUIDE'}
 						customcolor="white"
-						customfont="1.2rem"
+						customfont="1rem"
+						customminw={0}
 					>
 						GUIDE
+						<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
 					</NavLink>
-				</MobileItem>
+				</SectionItem>
 				<MobileSection>
 					<SectionTitle>Tests:</SectionTitle>
 					<SectionItem
@@ -273,6 +299,7 @@ const Nav: FC<NavProps> = () => {
 							link={'/Placement-test'}
 							customcolor="white"
 							customfont="1rem"
+							customminw={10}
 						>
 							Placement Test
 							<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
@@ -290,8 +317,24 @@ const Nav: FC<NavProps> = () => {
 							link={'/Animal-idioms'}
 							customcolor="white"
 							customfont="1rem"
+							customminw={10}
 						>
 							Animal Idioms
+							<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
+						</NavLink>
+					</SectionItem>
+					<SectionItem
+						onClick={() => {
+							setOpen(!open);
+						}}
+					>
+						<NavLink
+							link={'/Color-idioms'}
+							customcolor="white"
+							customfont="1rem"
+							customminw={10}
+						>
+							Color Idioms
 							<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
 						</NavLink>
 					</SectionItem>

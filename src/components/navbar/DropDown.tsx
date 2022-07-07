@@ -44,11 +44,11 @@ const ChildrenContainer = styled.div<ChildrenInterface>`
 	border-radius: 0.4rem;
 	padding: 1rem;
 	background-color: #8080808b;
-	bottom: -5rem;
+	top: 2rem;
 	display: ${(props) => (props.open ? 'flex' : 'none')};
 	align-items: left;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 `;
 
 const LinkIcon = styled.span<LinkProps>`

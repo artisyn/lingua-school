@@ -7,14 +7,17 @@ interface NavLinkProps {
 	children?: React.ReactNode;
 	customcolor?: string;
 	customfont?: string;
+	customminw?: number;
 }
 
 interface ContInterface {
 	customcolor?: string;
 	customfont?: string;
+	customminw?: number;
 }
 
 const Container = styled(Link)<ContInterface>`
+	min-width: ${(props) => props.customminw + 'rem'};
 	text-decoration: none;
 	outline: none;
 	color: ${(props) => props.customcolor};
@@ -26,7 +29,8 @@ const Container = styled(Link)<ContInterface>`
 	}
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	justify-content: space-between;
+	gap: 1rem;
 `;
 
 const NavLink: FC<NavLinkProps> = ({
@@ -34,9 +38,15 @@ const NavLink: FC<NavLinkProps> = ({
 	customcolor,
 	customfont,
 	children,
+	customminw,
 }) => {
 	return (
-		<Container customcolor={customcolor} customfont={customfont} to={link}>
+		<Container
+			customminw={customminw}
+			customcolor={customcolor}
+			customfont={customfont}
+			to={link}
+		>
 			{children}
 		</Container>
 	);

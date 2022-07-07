@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AnimalIdiomsPage from './AnimalIdiomsPage';
+import ColorIdiomsPage from './ColorIdiomsPage';
 import Guide from './Guide';
 import Home from './Home';
 import PlacementTestPage from './PlacementTestPage';
@@ -12,6 +13,7 @@ const PageRoutes: FC = () => {
 			<Route path="/Guide" element={<Guide />} />
 			<Route path="/Placement-test" element={<PlacementTestPage />} />
 			<Route path="/Animal-idioms" element={<AnimalIdiomsPage />} />
+			<Route path="/Color-idioms" element={<ColorIdiomsPage />} />
 
 			<Route path="*" element={<Navigate to="/Home" />} />
 		</Routes>

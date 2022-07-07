@@ -152,6 +152,7 @@ const Idiom: FC<IdiomInterface> = ({ element, updateCorrect, updateTotal }) => {
 			y.style.pointerEvents = 'none';
 		}
 	};
+
 	return (
 		<Container theme={theme} ref={mainRef}>
 			<Question>{element.question}</Question>
