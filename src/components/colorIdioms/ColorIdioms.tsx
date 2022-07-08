@@ -164,7 +164,7 @@ const ColorIdioms: FC = () => {
 								<ResultScore>
 									Total Correct Answers -{' '}
 									<ResultNumber>
-										{correct} / 20 ({correct} / 20 (
+										{correct} / 20 (
 										{((correct * 100) / 20).toFixed()}%)
 									</ResultNumber>
 								</ResultScore>
