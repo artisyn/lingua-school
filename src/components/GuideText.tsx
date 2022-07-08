@@ -64,11 +64,11 @@ const GuideText: FC<GuiteTextProps> = () => {
 
 			<Title>Idioms Quizz Guides</Title>
 
-			<Paragraph>There can be only one correct answer.</Paragraph>
+			<Paragraph>There can only be ONE correct answer.</Paragraph>
 			<Paragraph>
-				Your Answers are evaluated immediately, you won't be able to go
-				back and change your choice so be careful and take your time
-				with each question.
+				Your answers are evaluated immediately and there is no UNDO
+				button, so please think carefully before making your choice.
+				Look before you leap! ;)
 			</Paragraph>
 		</Container>
 	);

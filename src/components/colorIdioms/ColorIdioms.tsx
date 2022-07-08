@@ -1,8 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { idioms } from '../../data/colorIdiomsData';
 import Idiom from './Idiom';
 import { MdArrowRightAlt } from 'react-icons/md';
+import Confetti from '../confetti/Confetti';
 
 const Container = styled.div`
 	min-height: 60vh;
@@ -70,15 +71,32 @@ const ColorsItem = styled.div`
 	gap: 1rem;
 `;
 const ResultsBox = styled.div`
-	border: 2px solid red;
-	width: 10rem;
-	height: 3rem;
+	border: 2px solid #f7d571;
+	border-radius: 1rem;
+	min-width: 16rem;
+	padding: 2rem;
+	font-size: 1.3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+`;
+const ResultScore = styled.div``;
+const ResultNumber = styled.span`
+	font-weight: bold;
+`;
+const ResultMessage = styled.div`
+	font-weight: 500;
+	font-style: italic;
+	letter-spacing: 0.05rem;
 `;
 
 const ColorIdioms: FC = () => {
 	const [quizStage, setQuizStage] = useState<string>('quizStart');
 	const handleClick = (): void => {
 		setQuizStage('ssss');
+		setCorrect(0);
+		setMessage('');
+		setTotal(20);
 		window.scrollTo({
 			top: 0,
 			behavior: 'smooth',
@@ -89,16 +107,38 @@ const ColorIdioms: FC = () => {
 	};
 	const [correct, setCorrect] = useState<number>(0);
 	const [total, setTotal] = useState<number>(20);
+	const [message, setMessage] = useState<string>('');
 	const updateCorrect = (): void => {
 		setCorrect(correct + 1);
 	};
 	const updateTotal = (): void => {
 		setTotal(total - 1);
 	};
+	const calculateResults = (totalQuestions: number): void => {
+		const persentage = (correct * 100) / totalQuestions;
+
+		if (persentage <= 100 && persentage >= 91)
+			setMessage(
+				'Congratulations! You are a dab hand at English idioms! 🏆'
+			);
+		if (persentage <= 90 && persentage >= 61)
+			setMessage('Well done! You are a hotshot! 😄');
+		if (persentage <= 60 && persentage >= 31)
+			setMessage('Not bad, so keep up the good work! 🙂');
+		if (persentage <= 30 && persentage >= 0)
+			setMessage('Cheer up! Next time you might do better! 😉');
+	};
+	useEffect(() => {
+		if (total === 0) calculateResults(20);
+	}, [total]);
 	return (
 		<Container>
+			{total === 0 ? <Confetti /> : ''}
 			<IntroContainer>
-				<Rules>Pick a color that is missing from the sentence.</Rules>
+				<Rules>
+					Click on the right color to complete the idiom in each
+					sentence.
+				</Rules>
 				<Colors>
 					<ColorsItem>
 						<Box1></Box1> <Rules>Answer is incorrect</Rules>
@@ -120,7 +160,13 @@ const ColorIdioms: FC = () => {
 					))}
 					{total === 0 ? (
 						<Wrapper>
-							<ResultsBox>{correct}</ResultsBox>
+							<ResultsBox>
+								<ResultScore>
+									Total Correct Answers -{' '}
+									<ResultNumber>{correct} / 20</ResultNumber>
+								</ResultScore>
+								<ResultMessage>{message}</ResultMessage>
+							</ResultsBox>
 						</Wrapper>
 					) : (
 						<Wrapper>

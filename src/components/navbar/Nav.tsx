@@ -172,7 +172,7 @@ const Nav: FC<NavProps> = () => {
 
 	return (
 		<Container show={show} open={open}>
-			<LogoText>Lingua Plus.</LogoText>
+			<LogoText>Lingua Plus</LogoText>
 			<LinksContainer>
 				<NavLink
 					link={'/Home'}
