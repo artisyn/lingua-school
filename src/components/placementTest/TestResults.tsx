@@ -169,7 +169,15 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 	);
 
 	/// Evaluation Logic
-	const determineUsersLevel = (num: number): string => {
+	const determineUsersLevelA = (num: number): string => {
+		if (num >= 0 && num <= 20) return 'Below Elementary';
+		if (num >= 21 && num <= 35) return 'Elementary';
+		if (num >= 36 && num <= 60) return 'Pre-intermediate';
+		if (num >= 61 && num <= 85) return 'Intermediate';
+		if (num >= 86 && num <= 100) return 'Upper Intermediate';
+		return '';
+	};
+	const determineUsersLevelB = (num: number): string => {
 		if (num >= 0 && num <= 20) return 'Below Elementary';
 		if (num >= 21 && num <= 35) return 'Elementary';
 		if (num >= 36 && num <= 60) return 'Pre-intermediate';
@@ -178,8 +186,21 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 		return '';
 	};
 
+	const reduceObj = (obj: any) => {
+		const newObj: any = {};
+		for (let i = 1; i < 51; i++) {
+			newObj[i] = obj[i];
+		}
+		return newObj;
+	};
+	const userAnswers =
+		testLevel === 'A'
+			? {
+					...reduceObj(placementAnswers),
+			  }
+			: { ...placementAnswers };
+
 	const handleResults = () => {
-		const userAnswers = { ...placementAnswers };
 		const correct = [...questions[testLevel]];
 		const evaluation = { ...answersEvaluation };
 
@@ -192,7 +213,10 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 			0
 		);
 		setTotalCorrect(totalCorrectans);
-		const userLevel = determineUsersLevel(totalCorrect);
+		const userLevel =
+			testLevel === 'A'
+				? determineUsersLevelA(totalCorrect)
+				: determineUsersLevelB(totalCorrect);
 
 		setUserLevel(userLevel);
 	};
@@ -205,7 +229,7 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 
 	const CopyResults = async () => {
 		let answ: string = '';
-		Object.entries(placementAnswers).forEach((el) => {
+		Object.entries(userAnswers).forEach((el) => {
 			const str1 = `${el[0]} / [${el[1] ? el[1] : ''}] ,`;
 			answ += str1;
 		});
@@ -245,7 +269,7 @@ const TestResults: FC<ResultsInterface> = ({ testLevel, changeStage }) => {
 				<ResultElementFinal>
 					Your Answers:
 					<AnswersContainer>
-						{Object.entries(placementAnswers).map((el, i) => (
+						{Object.entries(userAnswers).map((el, i) => (
 							<AnswerUnit key={i}>
 								{' '}
 								{`${el[0]} / ${el[1]}`}

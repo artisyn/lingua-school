@@ -166,7 +166,10 @@ const AnimalIdioms: FC = () => {
 							<ResultsBox>
 								<ResultScore>
 									Total Correct Answers -{' '}
-									<ResultNumber>{correct} / 20</ResultNumber>
+									<ResultNumber>
+										{correct} / 20 (
+										{((correct * 100) / 20).toFixed()}%)
+									</ResultNumber>
 								</ResultScore>
 								<ResultMessage>{message}</ResultMessage>
 							</ResultsBox>

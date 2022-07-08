@@ -62,7 +62,7 @@ const GuideText: FC<GuiteTextProps> = () => {
 				or textbooks, etc.
 			</Paragraph>
 
-			<Title>Idioms Quizz Guides</Title>
+			<Title>Idiom Quizzes Guide</Title>
 
 			<Paragraph>There can only be ONE correct answer.</Paragraph>
 			<Paragraph>

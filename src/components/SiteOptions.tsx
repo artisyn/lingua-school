@@ -122,7 +122,7 @@ const SiteOptions: FC = () => {
 					</ClickableBox>
 				</SiteOptionEl>
 				<TextContainer>
-					Have Fun With Idioms Quizz.
+					Have Fun With English Idioms.
 					<BoxButton onClick={handleClickIdioms}>
 						Animal
 						<br /> Idioms
