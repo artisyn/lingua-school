@@ -13,9 +13,7 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	min-height: 30vh;
-	@media only screen and (max-width: 735px) {
-		flex-direction: column;
-	}
+	flex-wrap: wrap;
 `;
 
 const ClickableBox = styled.div`
@@ -91,12 +89,19 @@ const Symbol = styled.span`
 
 const SiteOptions: FC = () => {
 	const navigate = useNavigate();
-	const handleClickIdioms = (): void => {
+	const handleAnimalIdioms = (): void => {
 		navigate('/Animal-idioms');
+	};
+	const handleColorIdioms = (): void => {
+		navigate('/Color-idioms');
+	};
+	const handleBodyIdioms = (): void => {
+		navigate('/Body-idioms');
 	};
 	const handleClickPlacement = (): void => {
 		navigate('/Placement-test');
 	};
+
 	return (
 		<Container>
 			<BoxContainer>
@@ -122,9 +127,43 @@ const SiteOptions: FC = () => {
 					</ClickableBox>
 				</SiteOptionEl>
 				<TextContainer>
-					Have Fun With English Idioms.
-					<BoxButton onClick={handleClickIdioms}>
+					Have Fun With Animal Idioms.
+					<BoxButton onClick={handleAnimalIdioms}>
 						Animal
+						<br /> Idioms
+						<Symbol>
+							<MdArrowRightAlt />
+						</Symbol>
+					</BoxButton>
+				</TextContainer>
+			</BoxContainer>
+			<BoxContainer>
+				<SiteOptionEl>
+					<ClickableBox>
+						<Logo src={monitor2} />
+					</ClickableBox>
+				</SiteOptionEl>
+				<TextContainer>
+					Have Fun With Color Idioms.
+					<BoxButton onClick={handleColorIdioms}>
+						Color
+						<br /> Idioms
+						<Symbol>
+							<MdArrowRightAlt />
+						</Symbol>
+					</BoxButton>
+				</TextContainer>
+			</BoxContainer>
+			<BoxContainer>
+				<SiteOptionEl>
+					<ClickableBox>
+						<Logo src={monitor2} />
+					</ClickableBox>
+				</SiteOptionEl>
+				<TextContainer>
+					Have Fun With Body Idioms.
+					<BoxButton onClick={handleBodyIdioms}>
+						Body
 						<br /> Idioms
 						<Symbol>
 							<MdArrowRightAlt />

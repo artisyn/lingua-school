@@ -230,6 +230,15 @@ const Nav: FC<NavProps> = () => {
 						Color Idioms
 						<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
 					</NavLink>
+					<NavLink
+						link={'/Body-idioms'}
+						customcolor="white"
+						customfont="1rem"
+						customminw={0}
+					>
+						Body Idioms
+						<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
+					</NavLink>
 				</DropDown>
 			</LinksContainer>
 			<MobileContainer>
@@ -335,6 +344,21 @@ const Nav: FC<NavProps> = () => {
 							customminw={10}
 						>
 							Color Idioms
+							<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
+						</NavLink>
+					</SectionItem>
+					<SectionItem
+						onClick={() => {
+							setOpen(!open);
+						}}
+					>
+						<NavLink
+							link={'/Body-idioms'}
+							customcolor="white"
+							customfont="1rem"
+							customminw={10}
+						>
+							Body Idioms
 							<MdArrowRightAlt style={{ fontSize: '1.5rem' }} />
 						</NavLink>
 					</SectionItem>
