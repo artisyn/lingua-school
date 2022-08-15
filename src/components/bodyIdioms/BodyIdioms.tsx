@@ -136,7 +136,7 @@ const BodyIdioms: FC = () => {
 			{total === 0 ? <Confetti /> : ''}
 			<IntroContainer>
 				<Rules>
-					Click on the right color to complete the idiom in each
+					Click on the right body part to complete the idiom in each
 					sentence.
 				</Rules>
 				<Colors>
