@@ -19,7 +19,7 @@ export const idioms: idiomObj[] = [
 		b: 'hand',
 		c: 'finger',
 		d: 'shoulder',
-		correct: 'arm and a leg',
+		correct: 'leg',
 	},
 	{
 		idiom: "To keep (someone or something) at arm's length",
